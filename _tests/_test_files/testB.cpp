@@ -119,11 +119,11 @@ bool test_window_creation(bool debug){
 
 
 TEST(TEST_PLOT, testGetPoints){
-  EXPECT_EQ(1, test_getPoints(true)); 
+  EXPECT_EQ(1, test_getPoints(false)); 
 }
 
 TEST(TEST_TRANSLATOR, testTranslator){
-  EXPECT_EQ(1, test_translator(true)); 
+  EXPECT_EQ(1, test_translator(false)); 
 }
 
 TEST(TEST_ANIMATE, testWindowCreation){

@@ -188,6 +188,7 @@ void animate::processEvents()
                     someStr = graphHistory->returnClickedEqu(graphHistoryClicked); 
                     newEqu = someStr; 
                     command = CMD_REDRAW; 
+                    clear = false; 
                 }
 
                 break; 
