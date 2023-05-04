@@ -35,7 +35,7 @@ private:
     string someStr; 
     string newEqu; 
     string prevEqu; 
-    int command; 
+    int command = 100; 
     graph_info* graphInfo;
     Graph_History* graphHistory; 
     User_Input userInput;
