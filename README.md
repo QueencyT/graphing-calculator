@@ -6,6 +6,7 @@
 ## Features:
 
 - Not Implemented:
+- ========================LINK TO VIDEO ============================= https://www.loom.com/share/c256fdf1692f41d1b350de9938603382
   - what features have been implemented
 
 <br><br>
