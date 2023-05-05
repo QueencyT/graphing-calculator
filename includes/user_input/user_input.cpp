@@ -29,7 +29,7 @@ Queue<Token*> User_Input::parser(){
     int size_used = 14; 
     string token = ""; 
 
-    while(*equ != '\0'){
+    while(*equ != NULL){
         token += *equ; 
         typeSetter(infix, token); 
         equ++; 
@@ -40,32 +40,32 @@ Queue<Token*> User_Input::parser(){
 void User_Input::typeSetter(Queue<Token*>& infix, string& someStr){
     if(someStr == "sin" || someStr == "cos" || someStr == "tan" || someStr == "csc" || someStr == "sec" || someStr == "cot" || someStr == "log"){
         infix.push(new Function(someStr)); 
-        //cout<<someStr<<endl; 
+        cout<<someStr<<endl; 
         someStr =""; 
     }
     else if(someStr == "^" || someStr == "/" || someStr == "*" || someStr == "+" || someStr == "-"){
         infix.push(new Operator(someStr));
-        //cout<<someStr<<endl;
+        cout<<someStr<<endl;
         someStr = ""; 
     }
     else if(someStr == "("){
         infix.push(new LeftParen());
-        //cout<<someStr<<endl;
+        cout<<someStr<<endl;
         someStr = "";  
     }
     else if(someStr == ")"){
         infix.push(new RightParen());
-        //cout<<someStr<<endl;
+        cout<<someStr<<endl;
         someStr = ""; 
     }
     else if(someStr == "x"){
         infix.push(new Variable(someStr));
-        //cout<<someStr<<endl;
+        cout<<someStr<<endl;
         someStr= "";  
     }
     else if(isdigit(someStr[0])){
         infix.push(new Integer(someStr)); 
-        //cout<<someStr<<endl;
+        cout<<someStr<<endl;
         someStr =""; 
     }
 }
