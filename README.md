@@ -1,5 +1,7 @@
 # Graphing Calculator
 
+<img width="1745" height="1223" alt="Image" src="https://github.com/user-attachments/assets/df167d8b-8230-4fe8-ad36-01f2c54552fb" />
+
 An interactive graphing calculator built from scratch in C++ using SFML, featuring custom mathematical expression parsing and evaluation with the Shunting Yard algorithm and Reverse Polish Notation (RPN), interactive graph navigation, and persistent equation history.
 
 ## Features
