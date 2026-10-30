@@ -74,15 +74,3 @@ void ShuntingYard::parenDecider(Token* popped, Queue<Token*>& numbers, Stack<Tok
         operators.push(popped);
     }
 }
-
-/*
-void ShuntingYard::parenDecider(Token* popped, Queue<Token*>& numbers, Stack<Token*>& operators){
-    string tokVal = popped->getToken(); 
-    if(tokVal == ")"){
-        popRest(numbers, operators); 
-    }
-    else{
-        operators.push(popped);
-    }
-}
-*/
