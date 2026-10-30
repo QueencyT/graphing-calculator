@@ -21,8 +21,8 @@ Queue<Token*> ShuntingYard::postfix(const Queue<Token*>& someQueue){
 Queue<Token*> ShuntingYard::postfix(){
     Queue<Token*> numbers;
     Stack<Token*> operators; 
-    while(!inFix.empty()){
-        Token* popped = inFix.pop(); 
+    while(!inFix.empty()){ 
+        Token* popped = inFix.pop(); //pop an operator
         if(popped->getToken() == ")" || popped->getToken() == "("){
             parenDecider(popped, numbers,operators); 
         }
@@ -60,6 +60,22 @@ void ShuntingYard::operatorDecider(Token* popped, Queue<Token*>& numbers, Stack<
     operators.push(popped); //push the popped op onto stack now in correct place 
 }
 
+
+void ShuntingYard::parenDecider(Token* popped, Queue<Token*>& numbers, Stack<Token*>& operators){
+    string tokVal = popped->getToken(); 
+    if(tokVal == ")"){ 
+        while(!operators.empty() && operators.top()->getToken() != "("){
+            numbers.push(operators.pop());
+        }
+        if(!operators.empty()) //guard against mismatch case
+            operators.pop(); //remove the matching "(" from the stack
+    }
+    else{
+        operators.push(popped);
+    }
+}
+
+/*
 void ShuntingYard::parenDecider(Token* popped, Queue<Token*>& numbers, Stack<Token*>& operators){
     string tokVal = popped->getToken(); 
     if(tokVal == ")"){
@@ -69,3 +85,4 @@ void ShuntingYard::parenDecider(Token* popped, Queue<Token*>& numbers, Stack<Tok
         operators.push(popped);
     }
 }
+*/
